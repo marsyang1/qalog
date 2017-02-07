@@ -1,6 +1,8 @@
 package com.mars.qalog.entity;
 
+import lombok.AllArgsConstructor;
 import lombok.Data;
+import lombok.NoArgsConstructor;
 import org.springframework.data.annotation.Id;
 
 import java.util.List;
@@ -9,6 +11,8 @@ import java.util.List;
  * Created by yangyuchi on 05/02/2017.
  */
 @Data
+@NoArgsConstructor
+@AllArgsConstructor
 public class Qa {
 
 
@@ -18,5 +22,15 @@ public class Qa {
     private String answer;
     private List<String> tag;
 
+    public Qa(String question, String answer) {
+        this.question = question;
+        this.answer = answer;
+    }
+
+    public Qa(String question, String answer, List<String> tag) {
+        this.question = question;
+        this.answer = answer;
+        this.tag = tag;
+    }
 
 }
